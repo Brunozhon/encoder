@@ -31,10 +31,18 @@
       </fieldset>
       <fieldset>
         <legend>Output</legend>
-        <div>Khoor, Zruog!</div>
+        <div id="output">Khoor, Zruog!</div>
         <p>Note: The output won't change until I added support for capitals. What a CAPITAL idea!</p>
       </fieldset>
       <button type="submit">Encode!</button>
     </form>
+    <script>
+      var urlParams = new URLSearchParams(location.search)
+      var result = ""
+      if (urlParams.get("toBeEncoded") && urlParams.get("steps")) {
+        result = encodeSteps(urlParams.get("toBeEncoded"), urlParams.get("steps"))
+      }
+      document.getElementById("output").innerHTML = result
+    </script>
   </body>
 </html>
