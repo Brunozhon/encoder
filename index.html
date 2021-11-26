@@ -39,8 +39,8 @@
     <script>
       var urlParams = new URLSearchParams(location.search)
       var result = ""
-      if (urlParams.get("toBeEncoded") && urlParams.get("steps")) {
-        result = encodeSteps(urlParams.get("toBeEncoded"), urlParams.get("steps"))
+      if (urlParams.get("toBeEncoded") && urlParams.get("step")) {
+        result = encodeSteps(urlParams.get("toBeEncoded"), urlParams.get("step"))
       }
       document.getElementById("output").innerHTML = result
     </script>
