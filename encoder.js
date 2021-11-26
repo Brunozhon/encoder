@@ -6,20 +6,38 @@ var letters = [
   "u", "v", "w", "x", "y",
   "z"
 ]
+var uppercaseLetters = [
+  "A", "B", "C", "D", "E",
+  "F", "G", "H", "I", "J",
+  "K", "L", "M", "N", "O",
+  "P", "Q", "R", "S", "T",
+  "U", "V", "W", "X", "Y",
+  "Z"
+]
 function encodeSteps(str, steps) {
   var result = ""
   for (let letter of str) {
-    if (letters.indexOf(letter) < 0) {
+    if (letters.indexOf(letter) < 0 || uppercaseLetters.indexOf(letter) < 0) {
       // It's a space, a number, or a symbol.
       result += letter
     } else {
-      for (let i = 0; i < steps; i++) {
-        if ((letters.indexOf(letter) + 1) > 25) {
-          letter = "a"
+      if (letters.indexOf(letter) > 0) {
+        for (let i = 0; i < steps; i++) {
+          if ((letters.indexOf(letter) + 1) > 25) {
+            letter = "a"
+          }
+          letter = letters[letters.indexOf(letter) + 1]
         }
-        letter = letters[letters.indexOf(letter) + 1]
+        result += letter
+      } else {
+        for (let i = 0;, i < steps; i++) {
+          if ((uppercaseLetters.indexOf(letter) + 1) > 25) {
+            letter = "A"
+          }
+          letter = uppercaseLetters[uppercaseLetters.indexOf(letter) + 1]
+        }
+        result += letter
       }
-      result += letter
     }
   }
   return result
