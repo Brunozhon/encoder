@@ -8,6 +8,10 @@
   </head>
   <body>
     <h1 class="display-1">Encoder</h1>
+    <noscript>
+      <p class="lead bg-danger">Unfortunately, you can't encode text without the help of JavaScript. You could <b>a)</b> enable JavaScript (if possible) or <b>b)</b> look at the list of letters to encode by yourself:</p>
+      <p>a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+    </noscript>
     <form oninput="stepOutput.value=parseInt(step.value)">
       <fieldset>
         <legend>Text to be Encoded</legend>
@@ -22,6 +26,7 @@
           <label for="step">Number of steps:</label>
           <input type="range" min="1" max="25" name="step" id="step" value="3">
           <output for="step" name="stepOutput">3</output>
+          <noscript>Output that should update when you move the slider won't work without JavaScript.</noscript>
         </p>
       </fieldset>
       
