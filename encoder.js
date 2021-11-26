@@ -22,21 +22,25 @@ function encodeSteps(str, steps) {
       result += letter
     } else {
       if (letters.indexOf(letter) > 0) {
+        var _letter;
         for (let i = 0; i < steps; i++) {
           if ((letters.indexOf(letter) + 1) > 25) {
             letter = "a"
           }
           letter = letters[letters.indexOf(letter) + 1]
+          _letter = letter
         }
-        result += letter
+        result += _letter
       } else {
+        var _letter;
         for (let i = 0;, i < steps; i++) {
           if ((uppercaseLetters.indexOf(letter) + 1) > 25) {
             letter = "A"
           }
           letter = uppercaseLetters[uppercaseLetters.indexOf(letter) + 1]
+          _letter = letter
         }
-        result += letter
+        result += _letter
       }
     }
   }
