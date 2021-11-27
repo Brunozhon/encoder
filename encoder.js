@@ -22,7 +22,7 @@ function encodeSteps(str, steps) {
       result += letter
     } else {
       if (letters.indexOf(letter) > 0) {
-        var _letter;
+        let _letter;
         for (let i = 0; i < steps; i++) {
           if ((letters.indexOf(letter) + 1) > 25) {
             letter = "a"
@@ -32,7 +32,7 @@ function encodeSteps(str, steps) {
         }
         result += _letter
       } else {
-        var _letter;
+        let _letter;
         for (let i = 0;, i < steps; i++) {
           if ((uppercaseLetters.indexOf(letter) + 1) > 25) {
             letter = "A"
