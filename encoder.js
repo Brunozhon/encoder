@@ -33,7 +33,7 @@ function encodeSteps(str, steps) {
         result += _letter
       } else {
         let _letter;
-        for (let i = 0;, i < steps; i++) {
+        for (let i = 0; i < steps; i++) {
           if ((uppercaseLetters.indexOf(letter) + 1) > 25) {
             letter = "A"
           }
